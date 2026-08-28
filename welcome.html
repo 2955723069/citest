@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>快捷入口 | CITEST PORTAL</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body class="welcome-body">
+    <header class="topbar">
+      <div class="topbar-inner">
+        <a class="brand" href="welcome.html" aria-label="CITEST PORTAL 首页">
+          <span class="brand-mark" aria-hidden="true">C</span>
+          <span>CITEST PORTAL</span>
+        </a>
+        <div class="session-actions">
+          <p class="session-status">
+            <span class="status-dot" aria-hidden="true"></span>
+            <span id="current-user"></span>
+          </p>
+          <button id="logout-button" class="icon-button" type="button" aria-label="退出登录" title="退出登录">
+            <span aria-hidden="true">↪</span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main class="welcome-main">
+      <div class="welcome-heading">
+        <p class="eyebrow">CITEST PORTAL</p>
+        <h1>你的快捷入口</h1>
+        <p class="intro">选择一个站点，在新标签页中继续浏览。</p>
+      </div>
+
+      <section class="destination-grid" aria-label="常用网站">
+        <a class="destination-card" href="https://www.baidu.com/" target="_blank" rel="noopener noreferrer">
+          <span class="destination-mark baidu-mark" aria-hidden="true">B</span>
+          <span class="destination-copy">
+            <strong>百度</strong>
+            <small>baidu.com</small>
+          </span>
+          <span class="external-arrow" aria-hidden="true">↗</span>
+        </a>
+
+        <a class="destination-card" href="https://www.bing.com/" target="_blank" rel="noopener noreferrer">
+          <span class="destination-mark bing-mark" aria-hidden="true">B</span>
+          <span class="destination-copy">
+            <strong>必应</strong>
+            <small>bing.com</small>
+          </span>
+          <span class="external-arrow" aria-hidden="true">↗</span>
+        </a>
+
+        <a class="destination-card" href="https://github.com/" target="_blank" rel="noopener noreferrer">
+          <span class="destination-mark github-mark" aria-hidden="true">G</span>
+          <span class="destination-copy">
+            <strong>GitHub</strong>
+            <small>github.com</small>
+          </span>
+          <span class="external-arrow" aria-hidden="true">↗</span>
+        </a>
+      </section>
+    </main>
+
+    <script type="module" src="js/welcome.js"></script>
+  </body>
+</html>

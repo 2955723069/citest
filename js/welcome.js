@@ -1,13 +1,25 @@
 import { currentUsername, signOut } from "./auth.js";
 
-const username = currentUsername(sessionStorage);
+export function initWelcome({
+  documentRef = document,
+  storage = sessionStorage,
+  location = window.location,
+} = {}) {
+  const username = currentUsername(storage);
 
-if (!username) {
-  window.location.replace("index.html");
-} else {
-  document.querySelector("#current-user").textContent = username;
-  document.querySelector("#logout-button").addEventListener("click", () => {
-    signOut(sessionStorage);
-    window.location.replace("index.html");
+  if (!username) {
+    location.replace("index.html");
+    return false;
+  }
+
+  documentRef.querySelector("#current-user").textContent = username;
+  documentRef.querySelector("#logout-button").addEventListener("click", () => {
+    signOut(storage);
+    location.replace("index.html");
   });
+  return true;
+}
+
+if (typeof document !== "undefined") {
+  initWelcome();
 }

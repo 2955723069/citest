@@ -24,11 +24,20 @@ test("login page exposes an accessible form contract", async () => {
   assert.match(html, /src="js\/login\.js"/);
 });
 
+test("login page cannot submit named credentials before JavaScript initializes", async () => {
+  const html = await read("index.html");
+  assert.doesNotMatch(html, /id="username"[^>]*name="username"/);
+  assert.doesNotMatch(html, /id="password"[^>]*name="password"/);
+  assert.match(html, /id="login-button"[^>]*disabled/);
+  assert.match(html, /<noscript>/);
+});
+
 test("shared stylesheet includes responsive and reduced-motion rules", async () => {
   const css = await read("styles.css");
   assert.match(css, /@media \(max-width: 640px\)/);
   assert.match(css, /prefers-reduced-motion: reduce/);
   assert.match(css, /:focus-visible/);
+  assert.match(css, /button:disabled/);
 });
 
 test("welcome page exposes safe external destinations and session controls", async () => {

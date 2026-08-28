@@ -16,13 +16,13 @@
         <form id="login-form" novalidate>
           <div class="field">
             <label for="username">账号</label>
-            <input id="username" name="username" type="text" autocomplete="username" aria-describedby="username-error" required>
+            <input id="username" type="text" autocomplete="username" aria-describedby="username-error" required>
             <p id="username-error" class="error" aria-live="polite"></p>
           </div>
 
           <div class="field">
             <label for="password">密码</label>
-            <input id="password" name="password" type="password" autocomplete="current-password" aria-describedby="password-error" required>
+            <input id="password" type="password" autocomplete="current-password" aria-describedby="password-error" required>
             <p id="password-error" class="error" aria-live="polite"></p>
           </div>
 
@@ -33,7 +33,10 @@
 
           <p class="demo-notice">演示模式：输入任意非空账号和密码即可登录。</p>
           <p class="status" aria-live="polite"></p>
-          <button type="submit">登录</button>
+          <button id="login-button" type="submit" disabled>登录</button>
+          <noscript>
+            <p class="noscript-notice">请启用 JavaScript 后登录。本页面不会在未启用脚本时提交账号或密码。</p>
+          </noscript>
         </form>
       </section>
     </main>

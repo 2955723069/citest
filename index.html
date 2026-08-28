@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>CITEST PORTAL</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <main class="login-page">
+      <section class="login-shell" aria-labelledby="page-title">
+        <p class="eyebrow">CITEST PORTAL</p>
+        <h1 id="page-title">欢迎回来</h1>
+        <p class="intro">登录以继续访问你的快捷入口。</p>
+
+        <form id="login-form" novalidate>
+          <div class="field">
+            <label for="username">账号</label>
+            <input id="username" name="username" type="text" autocomplete="username" aria-describedby="username-error" required>
+            <p id="username-error" class="error" aria-live="polite"></p>
+          </div>
+
+          <div class="field">
+            <label for="password">密码</label>
+            <input id="password" name="password" type="password" autocomplete="current-password" aria-describedby="password-error" required>
+            <p id="password-error" class="error" aria-live="polite"></p>
+          </div>
+
+          <label class="checkbox-field" for="show-password">
+            <input id="show-password" type="checkbox">
+            <span>显示密码</span>
+          </label>
+
+          <p class="demo-notice">演示模式：输入任意非空账号和密码即可登录。</p>
+          <p class="status" aria-live="polite"></p>
+          <button type="submit">登录</button>
+        </form>
+      </section>
+    </main>
+    <script type="module" src="js/login.js"></script>
+  </body>
+</html>
